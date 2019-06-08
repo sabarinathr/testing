@@ -33,7 +33,7 @@ expressApp.use('/auth', authRoutes)
 //set the restrictedAreaRoutes used to demo the accesiblity or routes that ar OAuth2 protected
 expressApp.use('/restrictedArea', restrictedAreaRoutes)
 
-expressApp.get('/', async (req, res) => {
+/*expressApp.get('/', async (req, res) => {
 	res.send({'message':'Hello World!'});
   });
 
@@ -67,27 +67,8 @@ expressApp.get('/getAllProfiles', async (req, res) => {
     }
   });
 
-  expressApp.post('/validateUser', async (req, res) => {
-   
-    
-    var userName = req.body.username;
-    var password = req.body.password;
-
-    console.log("Username is :" + userName + " and password is :" + password);
-    try {
-     
-      const result =  mySqlConnection.query('SELECT * FROM users where username = \'' + userName+ '\' and password = \''+ password+'\'');
-      const results = { 'results': (result) ? result.rows : null};
-      res.send(result);
-     
-    } catch (err) {
-      console.error(err);
-      res.send("Error " + err);
-    }
-  });
-
 expressApp.post("/insertOrder", async (req, res) => {
-    console.log("request body is : " +req);
+    console.log(req.body);
     var reqObj = JSON.parse(Object.keys(req.body)[0]);
 
   try {
@@ -116,6 +97,6 @@ expressApp.get('/getOrders', async (req, res) => {
       console.error(err);
       res.send("Error " + err);
     }
-  });
+  });*/
 
 expressApp.listen(PORT, () => console.log(`Hello World App Listening on ${ PORT }`))

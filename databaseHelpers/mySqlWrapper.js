@@ -31,7 +31,7 @@ function initConnection() {
  * @param queryString
  * @param callback - takes a DataResponseObject
  */
-function query(queryString){
+function query(queryString, callback){
 
   //init the connection object. Needs to be done everytime as we call end()
   //on the connection after the call is complete
