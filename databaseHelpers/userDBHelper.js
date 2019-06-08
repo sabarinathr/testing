@@ -69,7 +69,7 @@ function getUserFromCrentials(username, password, callback) {
 function getUserFromToken(token, callback) {
 
   //create query using the data in the req.body to register the user in the db
-  const getUserQuery = `SELECT u.username FROM users u, access_tokens a WHERE a.access_token = '${token}' AND u.id = a.user_id`
+  const getUserQuery = `SELECT u.username FROM users u, access_tokens a WHERE a.access_token = '${token}' AND u.username = a.user_id`
 
   console.log('getUserFromCrentials query is: ', getUserQuery);
 
