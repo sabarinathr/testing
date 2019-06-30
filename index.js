@@ -14,7 +14,7 @@ var expressApp = express();
 expressApp.oauth = oAuth2Server({
   model: oAuthModel,
   grants: ['password'],
-  debug: true
+  debug: false
 })
 
 const restrictedAreaRoutesMethods = require('./restrictedArea/restrictedAreaRoutesMethods.js')(userDBHelper)
